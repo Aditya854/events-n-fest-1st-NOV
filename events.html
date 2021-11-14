@@ -47,9 +47,18 @@
  <!----------------------BODY BEGINS------------------------------>
 
 <body>
-<div class="header"   >
+<header class="header">
 
-  
+  <p class="Logo">Roundtable</p>
+  <div class="nav">
+    <ol>
+      <li><a href="#">Events</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Discussion</a></li>
+      <li><a href="#">Team</a></li>
+    </ol>
+  </div>
+  <div class="menu-btn"></div>
   <!-- <div id="nav" class="nav sticky" style="float: initial;">
     <button class="menu">
       <em class="hamburger"></em>
@@ -75,11 +84,10 @@
     </ul>
   </div> -->
 
-
+</header>
+<div class="header1">
 <div style="min-height: 1px;"></div>
   <div class="middle">Events And Fests</div>
-  
- 
 </div>
     <!-----------------------carousel strts-------------------------------->
 
@@ -399,24 +407,6 @@
 
   <script src="main.js"></script>
 
-  <script>
-    $(document).ready(function () {
-
-      $(window).scroll(function () {
-
-        var height = $('.first-container').height();
-        var scrollTop = $(window).scrollTop();
-
-        if (scrollTop >= height - 400) {
-          $('.nav-container').addClass('solid-nav');
-        } else {
-          $('.nav-container').removeClass('solid-nav');
-        }
-
-      });
-    });
-    
-  </script>
 <!-- MDB -->
  
 <script

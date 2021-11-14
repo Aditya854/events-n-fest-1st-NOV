@@ -1,50 +1,11 @@
-$(document).ready(function() {
+const menuBtn = document.querySelector(".menu-btn");
+const nav = document.querySelector(".nav");
 
-    $(window).scroll(function() {
-
-        var height = $('.first-container').height();
-        var scrollTop = $(window).scrollTop();
-
-        if (scrollTop >= height - 620) {
-            $('.nav-container').addClass('solid-nav');
-        } else {
-            $('.nav-container').removeClass('solid-nav');
-        }
-
-    });
+menuBtn.addEventListener("click", () => {
+  menuBtn.classList.toggle("transform");
+  nav.classList.toggle("transform");
 });
-
-
-/*http://callmenick.com/post/expanding-search-bar-using-css-transitions*/
-(function($) {
-    "use strict";
-  
-    var $navbar = $(".nav"),
-        y_pos = $navbar.offset().top,
-        height = $navbar.height();
-
-    //scroll top 0 sticky
-    $(document).scroll(function() {
-        var scrollTop = $(this).scrollTop();
-        if (scrollTop > 5) {
-          $navbar.addClass("sticky");
-        } else {
-          $navbar.removeClass("sticky");  
-        }
-    });
-    
-    //section sticky
-    /*$(document).scroll(function() {
-        var scrollTop = $(this).scrollTop();
-        if ($(window).height() > scrollTop) {
-          $navbar.removeClass("sticky");
-        } else {
-          $navbar.addClass("sticky");  
-        }
-    });*/
-
-})(jQuery, undefined);
-
-$(".menu").click(function(){
-  $("#nav").toggleClass("open");
+const header = document.querySelector('.header');
+window.addEventListener("scroll" , () => {
+        header.classList.toggle("fixed", window.scrollY > 30);
 });

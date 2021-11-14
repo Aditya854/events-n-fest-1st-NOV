@@ -4,21 +4,172 @@ html, body {
     font-family: "Open Sans", sans-serif;
     -webkit-font-smoothing: antialiased;
     margin: 0;
+    overflow-x: hidden;
 }
 
 *{
     box-sizing: border-box;
 }
 /*************** NAV BAR AND PHOTU STARTS ************************/
-.header{
+.header1{
   background:linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.5)), url(./images/demo/dtu\ background.jpg) ;
   background-size: cover; 
   width: 100%;
   height: auto;
   
   position: relative;
-
 }
+
+header {
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 100px;
+  transform: 0.5s ease;
+  background: linear-gradient(0deg, transparent 0, rgba(0, 0, 0, 0.3) 60%);
+  transition: all 0.6s ease-in;
+}
+
+.header.fixed {
+  position: fixed;
+  padding: 10px 30px;
+  background-color: black;
+}
+/* header{
+  width: 100%;
+  height: 50px;
+  background: #F8F8F8;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+} */
+.Logo {
+  color: #fff;
+  font-size: 1.5em;
+}
+
+/* ***NABAR*** */
+
+.nav {
+  display: flex;
+  align-items: center;
+}
+.nav ol {
+  display: flex;
+  list-style: none;
+}
+.nav ol li {
+  margin: 1em;
+}
+.nav ol li a {
+  text-decoration: none;
+  padding: 0.2em 1.2em 0.9em 1.2em;
+  border-radius: 10px 10px 0 0;
+  color: #fff;
+  transition: all 0.4s;
+  position: relative;
+  z-index: 1;
+}
+.nav ol li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 41px;
+  border-radius: 10px 10px 0 0;
+  background: #853333;
+  transform-origin: bottom;
+  background: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(255, 209, 67, 1) 0%,
+    rgba(255, 145, 83, 1) 90%
+  );
+  transform: scaleY(0.05);
+  z-index: -1;
+  transition: all 0.4s;
+}
+.nav ol li a:hover::before {
+  transform: scaleY(1.1);
+}
+.nav ol li a:hover {
+  color: rgb(235, 14, 14);
+}
+
+.menu-btn {
+  background: url(https://i.ibb.co/HrfVRcx/menu.png) no-repeat;
+  background-size: 30px;
+  background-position: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  display: none;
+}
+.menu-btn.transform {
+  background: url(https://cdn-icons-png.flaticon.com/512/1828/1828778.png)
+    no-repeat;
+  background-size: 25px;
+  background-position: center;
+  transition: 0.3s ease;
+  cursor: pointer;
+  transform: translateY(-15px);
+}
+.nav.transform {
+  transform: translateY(0%);
+  padding: 15px;
+}
+
+@media (max-width: 1200px) {
+  /* header {
+    justify-content: space-between;
+    padding: 50px 3.5em;
+  } */
+  /* .showcase header {
+    padding: 40 px;
+  } */
+  .menu-btn {
+    display: block;
+    z-index: 1000;
+  }
+  header {
+    justify-content: space-between;
+    padding: 40px 3.5em;
+  }
+  .nav {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    background: #f8f8f8;
+    transform: translateY(-110%);
+    transition: all 0.4s;
+  }
+  .nav ol li a {
+    color: rgb(39, 39, 39);
+  }
+}
+@media (max-width: 700px) {
+  .nav ol {
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav ol li a {
+    color: rgb(39, 39, 39);
+  }
+  .menu-btn {
+    z-index: 1000;
+  }
+}
+
 /* .nav-container {
     height: 58px;
     width: 100%;
@@ -676,7 +827,7 @@ html, body {
   height: 100%;
   width: 100%;
 }
-.nav {
+/*.nav {
   transition: all 0.5s ease;
   font-size: 12px;
   font-family: 'Open Sans', sans-serif;
@@ -685,7 +836,7 @@ html, body {
   position: absolute;
  /* bottom: 0;
   */
-  left: 0;
+  /*left: 0;
   letter-spacing: 2px;
   line-height: 100px;
   -webkit-transition-property: background-color, box-shadow, line-height, height;
@@ -700,7 +851,7 @@ html, body {
   */
  /* line-height: 30px;
   */
-  line-height: 15vh;
+ /* line-height: 15vh;
   padding-left: 60px;
   padding-right: 60px;
   
@@ -715,8 +866,8 @@ html, body {
   transition-duration: 0.3s;
  /* padding-right: 60px;
   */
-}
-.nav .brand a {
+/* } */
+/*.nav .brand a {
   color: #e33b00;
   text-decoration: none;
 }
@@ -745,10 +896,10 @@ html, body {
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
  /* box-shadow: 0 4px 5px -2px rgba(0,0,0,0.22), 0 2px 1px -1px rgba(0,0,0,0.05);
   */
-  background-color: #fff;
+  /* background-color: #fff;
   line-height: 30px;
-}
-.sticky .brand {
+} */
+/*.sticky .brand {
   line-height: 12vh;
 }
 .sticky ul li a {
@@ -907,7 +1058,7 @@ html, body {
 .logo1{
   height: 2.5rem;
   width: 2.5rem;
-}
+}*/
 
 .middle{
   align-items: center;
@@ -918,7 +1069,7 @@ html, body {
     color:#fff;
     font-size: 05vw ;
     /* text-transform: uppercase; */
-    margin-left: 21%;
+   margin-left: 21%;
     margin-top: 25%;
     top: 10%;
     left: 50%;
@@ -990,7 +1141,7 @@ html, body {
 }
 
 @media (min-width: 320px) and (max-width: 600px) {
-  .header{
+  .header1{
     background:linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,.4)), url(./images/demo/IMG-20210929-WA0052.jpg) ;
     background-size: cover;
     width: 100%;
