@@ -5,7 +5,7 @@ menuBtn.addEventListener("click", () => {
   menuBtn.classList.toggle("transform");
   nav.classList.toggle("transform");
 });
-const header = document.querySelector('.header');
+const header = document.querySelector(".header");
 window.addEventListener("scroll" , () => {
         header.classList.toggle("fixed", window.scrollY > 30);
 });
